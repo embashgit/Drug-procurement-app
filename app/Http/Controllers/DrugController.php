@@ -12,6 +12,12 @@ class DrugController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $all_drugs = Drug::all();

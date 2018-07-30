@@ -19,9 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('/drugs', 'DrugController');
 
 Route::post('/drugs/{drug}/edit', 'DrugController@edit');
-Route::resource('/drugs', 'DrugController');
+
 Route::resource('/procure', 'ProcurementController');
 Route::get('/drugs/{id}/procure', 'ProcurementController@edit')->name('procure');
 
